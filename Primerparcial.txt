@@ -1,0 +1,142 @@
+1. Generar Números Primos
+
+Descripción: Crea un endpoint que reciba un número n y devuelva los primeros n números primos.
+
+Path: /api/algorithms/prime-numbers/{n}
+
+Método: GET
+
+Ejemplo de solución.
+
+
+2. Suma de Dígitos
+
+Descripción: Crea un endpoint que reciba un número y devuelva la suma de sus dígitos.
+
+Path: /api/algorithms/sum-digits/{number}
+
+Método: GET
+
+Ejemplo de solución.
+
+
+
+3. Secuencia de Fibonacci
+
+Descripción: Crea un endpoint que reciba un número n y devuelva los primeros n números de la secuencia de Fibonacci.
+
+Path: /api/algorithms/fibonacci/{n}
+
+Método: GET
+
+Ejemplo https://gist.github.com/jhonben94/8a5797c256461d99fb6457cdc674a625
+
+4. Ordenar Arreglo
+
+Descripción: Crea un endpoint que reciba un arreglo de números y devuelva el arreglo ordenado (algoritmo de ordenación a elección).
+
+Path: /api/algorithms/sort
+
+Método: POST
+
+Body: { "numbers": [4, 2, 9, 1] }
+
+
+
+5. Número Capicúa
+
+Descripción: Crea un endpoint que reciba un número y determine si es un número capicúa (palíndromo).
+
+Path: /api/algorithms/palindrome/{number}
+
+Método: GET
+
+
+
+6. Potencia de un Número
+
+Descripción: Crea un endpoint que reciba dos números: base y exponente, y devuelva el resultado de la potencia.
+
+Path: /api/algorithms/power
+
+Método: POST
+
+Body: { "base": 2, "exponent": 5 }
+
+
+
+7. Número Perfecto
+
+Descripción: Crea un endpoint que reciba un número y determine si es un número perfecto (igual a la suma de sus divisores propios).
+
+Path: /api/algorithms/perfect-number/{number}
+
+Método: GET
+
+
+
+8. Calcular Factorial
+
+Descripción: Crea un endpoint que reciba un número y devuelva su factorial.
+
+Path: /api/algorithms/factorial/{number}
+
+Método: GET
+
+
+
+9. Sumatoria de Arreglo
+
+Descripción: Crea un endpoint que reciba un arreglo de números y devuelva la sumatoria de los elementos.
+
+Path: /api/algorithms/sum-array
+
+Método: POST
+
+Body: { "numbers": [1, 2, 3, 4] }
+
+
+
+10. Máximo Común Divisor (MCD)
+
+Descripción: Crea un endpoint que reciba dos números y devuelva su máximo común divisor (MCD).
+
+Path: /api/algorithms/gcd
+
+Método: POST
+
+
+
+11. Número Armstrong
+
+Descripción: Crea un endpoint que reciba un número y determine si es un número Armstrong (número que es igual a la suma de sus dígitos elevados a la potencia del número de dígitos).
+
+Path: /api/algorithms/armstrong/{number}
+
+Método: GET
+
+
+
+12. Convertir Número a Binario
+
+Descripción: Crea un endpoint que reciba un número entero y lo convierta a su representación binaria.
+
+Path: /api/algorithms/convert-to-binary/{number}
+
+Método: GET
+
+Body: { "number1": 56, "number2": 98 }
+
+
+
+Criterios de Evaluación:
+
+Correcta implementación de los endpoints.
+
+Uso adecuado de los principios de REST.
+
+Calidad del código y eficiencia de los algoritmos.
+
+Entregar el link del repositorio.
+
+Fecha limite para los commits 23-09-2024

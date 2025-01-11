@@ -1,0 +1,37 @@
+Temario
+Tema 1: Creación de Endpoint /segundo-parcial con Inyección de Dependencias usando @Inject
+Creación del Endpoint /segundo-parcial:
+Configura un nuevo recurso en Quarkus con el path /segundo-parcial. Este endpoint debe recibir una lista de String como parámetro en el cuerpo de la solicitud.
+
+Inyección de Dependencias con @Inject:
+Utiliza @Inject para inyectar el servicio SegundoParcialService en el recurso REST. Explica cómo se realiza esta inyección y por qué es útil en un entorno REST.
+
+Implementación de Métodos de Procesamiento en SegundoParcialService:
+En SegundoParcialService, implementa los siguientes métodos:
+
+Método 1: Procesa la lista de String recibida y determina cuántos de los elementos son palíndromos. Un palíndromo es una palabra o frase que se lee igual de izquierda a derecha que de derecha a izquierda (por ejemplo, "radar" o "level").
+Método 2: Devuelve la lista original, pero únicamente con los elementos que son palíndromos.
+Invocación de los Métodos en el Endpoint:
+Desde el endpoint /segundo-parcial, invoca los métodos de SegundoParcialService con la lista de String recibida. La respuesta JSON debe incluir:
+
+TotalPalindromos: Número total de palíndromos en la lista.
+ListaPalindromos: Lista con los elementos que son palíndromos.
+Manejo de Excepciones y Validaciones:
+Asegúrate de manejar posibles errores o excepciones, como listas vacías o con valores null. Incluye validaciones básicas para verificar que todos los elementos de la lista son cadenas de texto válidas.
+
+Tema 2: Creación de Endpoint /segundo-parcial-constructor con Inyección de Dependencias mediante Constructor
+Inyección de Dependencias mediante Constructor en el Recurso:
+Configura el recurso para que la inyección de SegundoParcialService se realice mediante el constructor. Explica la ventaja de utilizar inyección por constructor en términos de testabilidad y flexibilidad.
+
+Implementación de Funciones en SegundoParcialService:
+
+Modifica o adapta los métodos creados en el tema anterior para que puedan reutilizarse en el endpoint /segundo-parcial-constructor.
+El servicio debe recibir la lista de String y retornar el conteo y lista de palíndromos.
+Invocación de Métodos desde el Constructor:
+En el endpoint /segundo-parcial-constructor, llama a los métodos de SegundoParcialService a través de la instancia inyectada por el constructor. Devuelve la respuesta en formato JSON con los mismos campos definidos anteriormente.
+
+Pruebas de Unidad para ambos Endpoints:
+Crea pruebas unitarias para verificar que los endpoints /segundo-parcial y /segundo-parcial-constructor procesan correctamente la lista de String y devuelven los resultados esperados. Asegúrate de cubrir casos con listas vacías, listas con palíndromos y listas sin palíndromos.
+
+Comparación entre @Inject y Constructor en Quarkus:
+Realiza un análisis sobre las diferencias entre inyección por constructor y @Inject. Explica en qué casos usarías cada método y cómo afecta la creación de pruebas unitarias y la reutilización de componentes.

@@ -1,31 +1,47 @@
 package com.example;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
-@ApplicationScoped
-public class SegundoParcialService {
+@Path("/segundo-parcial")
+public class SegundoParcialResource {
 
-    // Método para contar palíndromos
-    public int contarPalindromos(List<String> lista) {
-        if (lista == null) return 0;
-        return (int) lista.stream()
-                          .filter(this::esPalindromo)
-                          .count();
+    // Inyectamos el servicio
+    @Inject
+    SegundoParcialService segundoParcialService;
+
+    // Endpoint para procesar los palíndromos
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response procesarPalindromos(List<String> lista) {
+        if (lista == null || lista.isEmpty()) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                           .entity("La lista no puede estar vacía o ser nula.")
+                           .build();
+        }
+
+        int totalPalindromos = segundoParcialService.contarPalindromos(lista);
+        List<String> listaPalindromos = segundoParcialService.obtenerPalindromos(lista);
+
+        return Response.ok(new ResultadoPalindromos(totalPalindromos, listaPalindromos)).build();
     }
+}
 
-    // Método para obtener la lista de palíndromos
-    public List<String> obtenerPalindromos(List<String> lista) {
-        if (lista == null) return List.of();
-        return lista.stream()
-                    .filter(this::esPalindromo)
-                    .toList();
-    }
+// Clase para envolver la respuesta
+class ResultadoPalindromos {
+    public int TotalPalindromos;
+    public List<String> ListaPalindromos;
 
-    // Método auxiliar para comprobar si una palabra es palíndromo
-    private boolean esPalindromo(String palabra) {
-        if (palabra == null) return false;
-        String palabraRevertida = new StringBuilder(palabra).reverse().toString();
-        return palabra.equalsIgnoreCase(palabraRevertida);
+    public ResultadoPalindromos(int totalPalindromos, List<String> listaPalindromos) {
+        this.TotalPalindromos = totalPalindromos;
+        this.ListaPalindromos = listaPalindromos;
     }
 }
