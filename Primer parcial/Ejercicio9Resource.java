@@ -2,7 +2,7 @@
 
 //[Descripción: Crea un endpoint que reciba un arreglo de números y devuelva la sumatoria de los elementos.]
 
-```java
+java
 package org.ejemplo;
 
 import javax.ws.rs.GET;

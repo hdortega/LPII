@@ -55,6 +55,11 @@
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-resteasy</artifactId>
 		</dependency>
+              <dependency>
+            <groupId>javax.ws</groupId>
+             <artifactId>javax.ws-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-resteasy-jsonb</artifactId>
@@ -63,6 +68,7 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+  
 		</dependencies>
 
 
